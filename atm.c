@@ -65,6 +65,29 @@ void deposit() {
   printf("Deposit successful. New balance: $%d\n", balances[currentUser]);
 }
 
+void withdraw() {
+  if (currentUser == -1) {
+    printf("Please log in first.\n");
+    return;
+  }
+  int amount;
+  printf("Enter amount to withdraw: \n");
+  scanf("%d", &amount);
+  if (amount <= 0) {
+    printf("Please withdraw more than $0.\n");
+    return;
+  }
+  if (amount > balances[currentUser]) {
+    printf("Insufficient funds. Current balance: $%d\n", balances[currentUser]);
+    return;
+  }
+  balances[currentUser] -= amount;
+  sprintf(transactions[currentUser][transactionCounts[currentUser]],
+          "Withdrew $%d", amount);
+  transactionCounts[currentUser]++;
+  printf("Withdrawal successful. New balance: $%d\n", balances[currentUser]);
+}
+
 int main() {
   printf("ATM Simulator\n");
   int loginResult = login();
