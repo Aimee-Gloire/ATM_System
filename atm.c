@@ -59,9 +59,14 @@ void deposit() {
     return;
   }
   balances[currentUser] += amount;
-  sprintf(transactions[currentUser][transactionCounts[currentUser]],
-          "Deposited $%d", amount);
-  transactionCounts[currentUser]++;
+  if (transactionCounts[currentUser] < Max_transactions) {
+    sprintf(transactions[currentUser][transactionCounts[currentUser]],
+            "Deposited $%d", amount);
+    transactionCounts[currentUser]++;
+  } else {
+    printf("Transaction log is full. This transaction will not be recorded.\n");
+  }
+
   printf("Deposit successful. New balance: $%d\n", balances[currentUser]);
 }
 
@@ -82,9 +87,14 @@ void withdraw() {
     return;
   }
   balances[currentUser] -= amount;
-  sprintf(transactions[currentUser][transactionCounts[currentUser]],
-          "Withdrew $%d", amount);
-  transactionCounts[currentUser]++;
+  if (transactionCounts[currentUser] < Max_transactions) {
+    sprintf(transactions[currentUser][transactionCounts[currentUser]],
+            "Withdrew $%d", amount);
+    transactionCounts[currentUser]++;
+  } else {
+    printf("Transaction log is full. This transaction will not be recorded.\n");
+  }
+
   printf("Withdrawal successful. New balance: $%d\n", balances[currentUser]);
 }
 
