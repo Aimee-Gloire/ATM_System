@@ -69,7 +69,7 @@ while (1) {
             break;
         case 5:
             printf("Logging out...\n");
-            break;  // exit the menu loop
+            break; 
         default:
             printf("Invalid choice. Please select between 1–5.\n");
     }
