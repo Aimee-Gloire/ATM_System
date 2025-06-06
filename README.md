@@ -15,8 +15,6 @@ This is an ATM system in C that allows multiple predefined users to log in and p
 
 ## Getting Started
 
-### Prerequisites
-
 You need a C compiler like `gcc` to compile and run this project.
 
 ### Compiling and running
