@@ -41,5 +41,38 @@ int login(){
 int main() {
     printf("ATM Simulator\n");
     int loginResult = login();
+
+    int choice;
+    do{
+        printf("\n===== ATM Menu =====\n");
+    printf("1. Check Balance\n");
+    printf("2. Deposit Money\n");
+    printf("3. Withdraw Money\n");
+    printf("4. View Transactions\n");
+    printf("5. Logout\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+
+    switch (choice) {
+        case 1:
+            printf("Check Balance selected (to be implemented).\n");
+            break;
+        case 2:
+            printf("Deposit selected (to be implemented).\n");
+            break;
+        case 3:
+            printf("Withdraw selected (to be implemented).\n");
+            break;
+        case 4:
+            printf("View Transactions selected (to be implemented).\n");
+            break;
+        case 5:
+            printf("Logging out...\n");
+            break;
+        default:
+            printf("Invalid choice. Please select between 1–5.\n");
+    }
+} while (choice != 5);
+    
     return 0;
 }
