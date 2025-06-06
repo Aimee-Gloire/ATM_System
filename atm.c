@@ -31,7 +31,11 @@ int login(){
                 return 1;
             }
         }
+        printf("Invalid username or PIN. Please try again.\n");
+        attempts++;
 }
+    printf("Too many failed attempts. Exiting...\n");
+    return 0;
 }
 
 int main() {
