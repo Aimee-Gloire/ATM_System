@@ -88,6 +88,20 @@ void withdraw() {
   printf("Withdrawal successful. New balance: $%d\n", balances[currentUser]);
 }
 
+void viewTransactions() {
+  if (currentUser == -1) {
+    printf("Please log in first.\n");
+    return;
+  }
+  printf("Transaction history:\n");
+  for (int i = 0; i < transactionCounts[currentUser]; i++) {
+    printf("%s\n", transactions[currentUser][i]);
+  }
+  if (transactionCounts[currentUser] == 0) {
+    printf("No transactions found.\n");
+  }
+}
+
 int main() {
   printf("ATM Simulator\n");
   int loginResult = login();
@@ -111,11 +125,11 @@ int main() {
     case 2:
       deposit();
       break;
-      // case 3:
-      //   withdraw();
-      //   break;
-      // case 4:
-      //   viewTransactions();
+    case 3:
+      withdraw();
+      break;
+    case 4:
+      viewTransactions();
       break;
     case 5:
       printf("Logging out...\n");
