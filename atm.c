@@ -18,6 +18,8 @@ int login() {
   int attempts = 0;
 
   while (attempts < 3) {
+    printf("WELCOME TO THE ATM\n");
+    printf("Please log in to continue.\n");
     printf("Enter username: \n");
     scanf("%s", username);
 
@@ -152,6 +154,6 @@ int main() {
  if (login()) {
     showMenu();
   }
-  
+
   return 0;
 }
